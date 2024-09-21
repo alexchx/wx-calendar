@@ -24,7 +24,7 @@ const cliPath =
 
 const cli = (command, withPrj = false, options = void 0) => {
   options = { ...options, encoding: 'utf-8' };
-  const result = execSync(`${cliPath} ${command}${withPrj ? ` --project ${PRJ_PATH}` : ''}`, options);
+  const result = execSync(`"${cliPath}" ${command}${withPrj ? ` --project ${PRJ_PATH}` : ''}`, options);
   return result && JSON.parse(result);
 };
 
@@ -32,7 +32,7 @@ module.exports.cli = cli;
 
 module.exports.task = () => {
   try {
-    execSync(`${cliPath} -h`, STDIO_IGNORE);
+    execSync(`"${cliPath}" -h`, STDIO_IGNORE);
   } catch (err) {
     console.log(time(), 'Warning'.yellow, '请配置正确的微信开发工具cli路径'.grey);
     console.log(
