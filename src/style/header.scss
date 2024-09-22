@@ -48,7 +48,7 @@
     margin: 0 0 0 6rpx;
     font-weight: normal;
     transition: all .28s ease 0s;
-    opacity: 1;
+    /*opacity: 1;*/
   }
 }
 
@@ -224,9 +224,9 @@
   }
   @include or(hide-header, hide-subinfo) {
     .wc__header-title-info {
-      opacity: 0 !important;
+      /*opacity: 0 !important;*/
+      display: none;
     }
-    
   }
   @include or(hide-today, hide-header) {
     .wc__operator--today {
