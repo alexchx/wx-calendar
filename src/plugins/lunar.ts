@@ -424,7 +424,7 @@ export class LunarPlugin implements Plugin {
         if (lunar.day === 1) {
           const key = getAnnualMarkKey({ month, day });
           const set: WcAnnualMark = {};
-          set.sub = lunar.month === 1 ? '#F56C6C' : '#409EFF';
+          set.sub = lunar.month === 1 ? '#FF0000'/*'#F56C6C'*/ : '#FFBF29'/*'#409EFF'*/;
           marks.set(key, set);
         }
       }
@@ -432,8 +432,8 @@ export class LunarPlugin implements Plugin {
 
     return {
       subinfo: [
-        { text: lunarYear, color: '#F56C6C' },
-        { text: '农历初一', color: '#409EFF' }
+        { text: lunarYear, color: '#FF0000'/*'#F56C6C'*/ },
+        { text: '农历初一', color: '#FFBF29'/*'#409EFF'*/ }
       ],
       marks
     };

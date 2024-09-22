@@ -119,7 +119,8 @@ const iframe = (from: number, to: number, frame: number): number => {
 };
 
 /** 主题色 */
-const PrimaryColor = '#409EFF';
+//const PrimaryColor = '#409EFF';
+const PrimaryColor = '#FFBF29';
 
 /** 深浅模式色号 */
 const PrinterTheme = {
