@@ -9,9 +9,7 @@
     <span class="wc__header-title-info">{{ info }}</span>
   </view>
   <view class="wc__operators">
-    <view 
-      class="wc__operator wc__operator--today {{ (checked && !checked.today) ? 'wc__operator--show' : '' }}" 
-      catchtap="toToday"></view>
+    <view class="wc__operator wc__operator--today {{ (checked && !checked.today) ? 'wc__operator--show' : '' }}" catchtap="toToday"></view>
     <view class="wc__operator wc__operator--views" catchtap="toggleView">
       <view id="view_bar_1" class="wc__operator-view">
         <view class="wc__operator-view-text">月</view>
@@ -21,5 +19,6 @@
       </view>
       <view id="view_bar" class="wx__views-bar"></view>
     </view>
+    <view class="wc__operator wc__operator--events" catchtap="toggleEventOnly"></view>
   </view>
 </view>

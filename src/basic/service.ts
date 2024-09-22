@@ -114,6 +114,12 @@ interface PluginEventHandler {
    */
   PLUGIN_ON_VIEWCHANGE?(service: PluginService, detail: CalendarEventDetail, emiter: OnceEmiter): void;
   /**
+   * 日历/日程模式变化触发
+   * @param service PliginService实例
+   * @param detail 事件详情数据
+   */
+  PLUGIN_ON_EVENTONLYCHANGE?(service: PluginService, detail: CalendarEventDetail, emiter: OnceEmiter): void;
+  /**
    * 视图变化触发
    * @param service PliginService实例
    */

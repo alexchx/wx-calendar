@@ -86,6 +86,8 @@ export interface CalendarData extends WechatMiniprogram.Component.DataOption {
   darkside: boolean;
   /** 属性 layout 的翻版 */
   areaHideCls: string;
+  /** 是否为 event 列表模式 */
+  eventOnly: boolean;
 }
 
 export interface CalendarProp extends WechatMiniprogram.Component.PropertyOption {
@@ -162,6 +164,10 @@ interface CalendarEventHandlers {
    */
   toToday(event: TouchEvent<{}>): void;
   /**
+   * 切换日程/日历
+   */
+  toggleEventOnly(event: TouchEvent<{}>): void;
+  /**
    * 点击选择日期
    */
   selDate(event: TouchEvent<{}, {}, { wdx: number; ddx: number }>): void;
@@ -214,6 +220,7 @@ interface CalendarEventHandlers {
 export interface CalendarEventDetail {
   checked?: CalendarDay;
   view?: CalendarView;
+  eventOnly?: boolean;
   range?: [startDate: CalendarDay, endDate: CalendarDay];
   source?: 'click' | 'gesture' | 'annual' | 'control'; // 点击 ｜ 手势滑动 ｜ 年面板点击 ｜ 方法控制
 }

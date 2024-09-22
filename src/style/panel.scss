@@ -266,3 +266,11 @@
     color: theme(checked-today-color) !important;
   }
 }
+
+.wc {
+  @include if(eventOnly) {
+    .wc__panel {
+      display: none;
+    }
+  }
+}

@@ -24,3 +24,11 @@
     @include column-width;
   }
 }
+
+.wc {
+  @include if(eventOnly) {
+    .wc__week {
+      display: none;
+    }
+  }
+}

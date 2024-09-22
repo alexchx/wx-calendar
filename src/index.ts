@@ -124,7 +124,8 @@ Component<CalendarData, CalendarProp, CalendarMethod, CalendarCustomProp>({
     layout: null,
     pointer: null,
     fonts: FONT,
-    info: ''
+    info: '',
+    eventOnly: false
   },
   lifetimes: {
     created() {
@@ -243,6 +244,10 @@ Component<CalendarData, CalendarProp, CalendarMethod, CalendarCustomProp>({
       if (isSkyline(this.renderer)) await this._dragger_!.toView(_view, true);
       await this._panel_.refreshView(_view);
       this.trigger('viewchange', { view: flagView(this._view_) });
+    },
+    toggleEventOnly() {
+      this.setData({ eventOnly: !this.data.eventOnly });
+      this.trigger('eventonlychange', { eventOnly: this.data.eventOnly });
     },
     async calendarTransitionEnd() {
       if (isSkyline(this.renderer)) return;

@@ -165,6 +165,29 @@
       }
     }
   }
+  @include if(events) {
+    width: calc(var(--wc-operator-side) * 1.5);
+    justify-content: center;
+    transition: all .28s ease 0s;
+    opacity: 1;
+    overflow: hidden;
+    border-radius: calc(var(--wc-operator-side) / 2);
+    &::before {
+      content: "日程";
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: calc(var(--wc-operator-side) * 0.5 + var(--wc-operator-inner-side));
+      height: var(--wc-operator-inner-side);
+      color: theme(opt-color);
+      background: transparent;
+      font-size: theme(operator-size);
+      border-radius: calc(var(--wc-operator-inner-side) / 2);
+      line-height: 1;
+      font-weight: bold;
+    }
+  }
 }
 
 .wx__views-bar {
@@ -209,11 +232,28 @@
     .wc__operator--today {
       display: none !important;
     }
-    
   }
   @include or(hide-viewbar, hide-header) {
     .wc__operator--views {
       display: none !important;
+    }
+  }
+  @include if(eventOnly) {
+    .wc__header-title {
+      opacity: 0 !important;
+    }
+    .wc__operator--today {
+      display: none !important;
+    }
+    .wc__operator--views {
+      display: none !important;
+    }
+    .wc__operator--events {
+      &::before {
+        content: "返回";
+        color: theme(opt-checked-color);
+        background: theme(opt-checked-bg);
+      }
     }
   }
 }
