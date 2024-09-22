@@ -75,7 +75,7 @@
         color: theme(checked-color);
       }
       .wc__panel-mark {
-        color: theme(checked-mark-color);
+        color: theme(checked-mark-color) !important;
       }
     }
 
