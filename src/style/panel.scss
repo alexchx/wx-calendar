@@ -65,7 +65,7 @@
     @include if(checked) {
       .wc__panel-day {
         &::after {
-          color: theme(checked-dot-color);
+          color: theme(checked-dot-color) !important;
         }
       }
       .wc__panel-solar, .wc__panel-mark {
